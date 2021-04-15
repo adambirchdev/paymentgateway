@@ -25,7 +25,7 @@ jobs:
       run: dotnet test Checkout.com.sln --no-build --verbosity normal
     - name: Docker build api
       run: |
-        docker build ./Checkout.com -t checkoutapi
+        docker build ./ -t checkoutapi
     - name: Docker build simulator
       run: |
         docker build ./Checkout.com.BankSimulator -t checkoutsimulator

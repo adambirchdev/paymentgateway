@@ -7,7 +7,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
-COPY ["Checkout.com.BankSimulator/Checkout.com.BankSimulator.csproj", "Checkout.com.BankSimulator/"]
+COPY ["Checkout.com.BankSimulator.csproj", "Checkout.com.BankSimulator/"]
 RUN dotnet restore "Checkout.com.BankSimulator/Checkout.com.BankSimulator.csproj"
 COPY . .
 WORKDIR "/src/Checkout.com.BankSimulator"

@@ -5,11 +5,11 @@ services:
     image: ${DOCKER_REGISTRY-}checkoutcom
     build:
       context: .
-      dockerfile: Checkout.com/Dockerfile
+      dockerfile: api.Dockerfile
 
   checkout.com.banksimulator:
     image: ${DOCKER_REGISTRY-}checkoutcombanksimulator
     build:
       context: .
-      dockerfile: Checkout.com.BankSimulator/Dockerfile
+      dockerfile: bank.Dockerfile
 

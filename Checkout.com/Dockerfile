@@ -7,7 +7,8 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
-COPY ["./Checkout.com.csproj", "Checkout.com/"]
+COPY ["Checkout.com/Checkout.com.csproj", "Checkout.com/"]
+COPY ["Checkout.com.Shared/Checkout.com.Shared.csproj", "Checkout.com.Shared/"]
 RUN dotnet restore "Checkout.com/Checkout.com.csproj"
 COPY . .
 WORKDIR "/src/Checkout.com"

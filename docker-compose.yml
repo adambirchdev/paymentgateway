@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  checkout.com:
+    image: ${DOCKER_REGISTRY-}checkoutcom
+    build:
+      context: .
+      dockerfile: Checkout.com/Dockerfile
+
+  checkout.com.banksimulator:
+    image: ${DOCKER_REGISTRY-}checkoutcombanksimulator
+    build:
+      context: .
+      dockerfile: Checkout.com.BankSimulator/Dockerfile
+

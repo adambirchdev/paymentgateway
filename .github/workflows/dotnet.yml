@@ -38,7 +38,7 @@ jobs:
         docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/checkoutapi:${{ github.sha }}
         docker build -f bank.Dockerfile . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/checkoutsimulator:${{ github.sha }}
         docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/checkoutsimulator:${{ github.sha }}
-    - name: 'Deploy to Azure Container Instances'
+    - name: 'Deploy to Azure Container Instances API'
       uses: 'azure/aci-deploy@v1'
       with:
         resource-group: ${{ secrets.RESOURCE_GROUP }}
@@ -48,8 +48,9 @@ jobs:
         registry-username: ${{ secrets.REGISTRY_USERNAME }}
         registry-password: ${{ secrets.REGISTRY_PASSWORD }}
         name: checkoutapi
+        secure-environment-variables: "ConnectionStrings:DefaultConnection"=${{ secrets.AZURE_CONNECTION_STRING }}
         location: 'UK South'
-    - name: 'Deploy to Azure Container Instances'
+    - name: 'Deploy to Azure Container Instances Bank'
       uses: 'azure/aci-deploy@v1'
       with:
         resource-group: ${{ secrets.RESOURCE_GROUP }}
@@ -58,6 +59,6 @@ jobs:
         registry-login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
         registry-username: ${{ secrets.REGISTRY_USERNAME }}
         registry-password: ${{ secrets.REGISTRY_PASSWORD }}
-        name: checkoutsimulator
+        name: checkoutbank
         location: 'UK South'
         

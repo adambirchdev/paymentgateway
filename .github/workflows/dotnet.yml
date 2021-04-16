@@ -42,20 +42,20 @@ jobs:
       uses: 'azure/aci-deploy@v1'
       with:
         resource-group: ${{ secrets.RESOURCE_GROUP }}
-        dns-name-label: ${{ secrets.RESOURCE_GROUP }}${{ github.run_number }}api
+        dns-name-label: ${{ secrets.RESOURCE_GROUP }}api
         image: ${{ secrets.REGISTRY_LOGIN_SERVER }}/checkoutapi:${{ github.sha }}
         registry-login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
         registry-username: ${{ secrets.REGISTRY_USERNAME }}
         registry-password: ${{ secrets.REGISTRY_PASSWORD }}
         name: checkoutapi
-        environment-variables: BankSimulatorUrl="http://${{ secrets.RESOURCE_GROUP }}${{ github.run_number }}bank.uksouth.azurecontainer.io"
+        environment-variables: BankSimulatorUrl="http://${{ secrets.RESOURCE_GROUP }}bank.uksouth.azurecontainer.io"
         secure-environment-variables: ConnectionStrings__DefaultConnection=${{ secrets.AZURE_CONNECTION_STRING }} ApplicationInsights__InstrumentationKey=${{ secrets.AZURE_APPLICATION_INSIGHTS }}
         location: 'UK South'
     - name: 'Deploy to Azure Container Instances Bank'
       uses: 'azure/aci-deploy@v1'
       with:
         resource-group: ${{ secrets.RESOURCE_GROUP }}
-        dns-name-label: ${{ secrets.RESOURCE_GROUP }}${{ github.run_number }}bank
+        dns-name-label: ${{ secrets.RESOURCE_GROUP }}bank
         image: ${{ secrets.REGISTRY_LOGIN_SERVER }}/checkoutsimulator:${{ github.sha }}
         registry-login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
         registry-username: ${{ secrets.REGISTRY_USERNAME }}

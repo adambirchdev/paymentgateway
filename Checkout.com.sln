@@ -13,8 +13,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Checkout.com.Client", "Chec
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Checkout.com.Shared", "Checkout.com.Shared\Checkout.com.Shared.csproj", "{C27B4FBC-DBB8-4EC9-9187-0C6F0AD51323}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{CF509823-4642-4D1E-9396-5518F1B82E24}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,10 +39,6 @@ Global
 		{C27B4FBC-DBB8-4EC9-9187-0C6F0AD51323}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C27B4FBC-DBB8-4EC9-9187-0C6F0AD51323}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C27B4FBC-DBB8-4EC9-9187-0C6F0AD51323}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CF509823-4642-4D1E-9396-5518F1B82E24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CF509823-4642-4D1E-9396-5518F1B82E24}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CF509823-4642-4D1E-9396-5518F1B82E24}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CF509823-4642-4D1E-9396-5518F1B82E24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,6 +8,6 @@ namespace Checkout.com.Shared.Models
 
         public PaymentStatus Status { get; set; }
 
-        public string Reason { get; set; }
+        public string Reason => Status.ToString();
     }
 }

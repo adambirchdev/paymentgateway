@@ -21,5 +21,7 @@
         public decimal Amount { get; set; }
 
         public PaymentStatus Status { get; set; }
+
+        public string Reason => Status.ToString();
     }
 }

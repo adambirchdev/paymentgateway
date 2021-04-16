@@ -59,8 +59,7 @@ namespace Checkout.com.Controllers
             return Ok(new FulfillResponse
             {
                 BankTransactionId = result.TransactionId,
-                Status = status,
-                Reason = status.ToString()
+                Status = status
             });
         }
         
@@ -89,7 +88,7 @@ namespace Checkout.com.Controllers
                 CardNumber = payment.CardNumber,
                 ExpiryMonthYear = payment.ExpiryMonthYear,
                 Amount = payment.Amount,
-                CurrencyCode = payment.CurrencyCode
+                CurrencyCode = payment.CurrencyCode,
             });
         }
 

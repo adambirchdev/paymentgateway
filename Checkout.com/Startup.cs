@@ -39,8 +39,7 @@ namespace Checkout.com
                 c.BaseAddress = new Uri(Configuration.GetValue<string>("BankSimulatorUrl"));
             });
 
-            //TODO add key
-            //services.AddApplicationInsightsTelemetry(Configuration);
+            services.AddApplicationInsightsTelemetry(Configuration);
 
             var secret = Configuration.GetValue<string>("JwtSecret");
 

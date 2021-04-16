@@ -48,8 +48,8 @@ jobs:
         registry-username: ${{ secrets.REGISTRY_USERNAME }}
         registry-password: ${{ secrets.REGISTRY_PASSWORD }}
         name: checkoutapi
-        environment-variables: BankSimulatorUrl="http://${{ secrets.RESOURCE_GROUP }}${{ github.run_number }}bank.azurecontainer.io"
-        secure-environment-variables: ConnectionStrings__DefaultConnection=${{ secrets.AZURE_CONNECTION_STRING }}
+        environment-variables: BankSimulatorUrl="http://${{ secrets.RESOURCE_GROUP }}${{ github.run_number }}bank.uksouth.azurecontainer.io"
+        secure-environment-variables: ConnectionStrings__DefaultConnection=${{ secrets.AZURE_CONNECTION_STRING }} ApplicationInsights__InstrumentationKey=${{ secrets.AZURE_APPLICATION_INSIGHTS }}
         location: 'UK South'
     - name: 'Deploy to Azure Container Instances Bank'
       uses: 'azure/aci-deploy@v1'

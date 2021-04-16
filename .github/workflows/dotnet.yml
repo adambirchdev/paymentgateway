@@ -48,7 +48,7 @@ jobs:
         registry-username: ${{ secrets.REGISTRY_USERNAME }}
         registry-password: ${{ secrets.REGISTRY_PASSWORD }}
         name: checkoutapi
-        secure-environment-variables: 'ConnectionStrings:DefaultConnection'=${{ secrets.AZURE_CONNECTION_STRING }}
+        secure-environment-variables: ConnectionStrings__DefaultConnection=${{ secrets.AZURE_CONNECTION_STRING }}
         location: 'UK South'
     - name: 'Deploy to Azure Container Instances Bank'
       uses: 'azure/aci-deploy@v1'
